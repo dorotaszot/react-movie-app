@@ -13,23 +13,46 @@ const App = () => {
       "Poster": "https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SX300.jpg"
     },
     {
-      "Title": "Land of the Dead",
-      "Year": "2005",
-      "imdbID": "tt0418819",
+      "Title": "Going Down in LA-LA Land",
+      "Year": "2011",
+      "imdbID": "tt1599296",
       "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNzU1MDI1NDM1NF5BMl5BanBnXkFtZTcwMzU5OTkyMQ@@._V1_SX300.jpg"
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTQwNjEzNTI0MV5BMl5BanBnXkFtZTcwMzI2MzY5Ng@@._V1_SX300.jpg"
     },
     {
-      "Title": "Cop Land",
-      "Year": "1997",
-      "imdbID": "tt0118887",
+      "Title": "La La Land",
+      "Year": "2010",
+      "imdbID": "tt1288499",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTUwMjcyNzg5N15BMl5BanBnXkFtZTcwMDI0MzkwMw@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "La La Land",
+      "Year": "2016",
+      "imdbID": "tt3783958",
       "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNmNhMzI0NmQtMzU1OS00NzQzLTg0NzctZDJkODZlMjU3OTc5XkEyXkFqcGdeQXVyNDc2NjEyMw@@._V1_SX300.jpg"
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMzUzNDM2NzM2MV5BMl5BanBnXkFtZTgwNTM3NTg4OTE@._V1_SX300.jpg"
+    },
+    {
+      "Title": "Going Down in LA-LA Land",
+      "Year": "2011",
+      "imdbID": "tt1599296",
+      "Type": "movie",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTQwNjEzNTI0MV5BMl5BanBnXkFtZTcwMzI2MzY5Ng@@._V1_SX300.jpg"
+    },
+    {
+      "Title": "La La Land",
+      "Year": "2010",
+      "imdbID": "tt1288499",
+      "Type": "series",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTUwMjcyNzg5N15BMl5BanBnXkFtZTcwMDI0MzkwMw@@._V1_SX300.jpg"
     }
   ])
   return (
-    <div className="container-fluid">
-      <MovieList movies={movies}/>
+    <div className="container-fluid movie-app">
+      <div className="row">
+        <MovieList movies={movies}/>
+      </div>
     </div>
   );
 }
