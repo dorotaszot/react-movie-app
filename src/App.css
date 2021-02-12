@@ -1,57 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #333;
   color: #fff;
 }
 
-.movie-app {
-  display: inline-block;
-  white-space: nowrap;
-  /* overflow-x: hidden; */
+.movielist-container {
+  justify-content: center;
+  /* align-items: center; */
 }
 
-/* .movie-app::-webkit-scrollbar-track {
-  background-color: transparent;
+/* .movie-img {
+  height: 100%;
 } */
-
-.row {
-  height: 500px;
-  /* z-index: 2; */
-}
-
-.fa-chevron-left,
-.fa-chevron-right {
-  position: fixed;
-  top: 50%;
-  font-size: 50px;
-  color: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-}
-
-.fa-chevron-left {
-  left: 0;
-}
-
-.fa-chevron-right {
-  right: 0;
-}
-
-.img-container {
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.fa-chevron-right:active {
-  animation-name: chevron-right;
-}
-
-@keyframes chevron-right {
-  25% {
-    left: 300px;
-  }
-  50% {
-    left: 600px;
-  }
-  75% {
-    left: 900px;
-  }
-}
