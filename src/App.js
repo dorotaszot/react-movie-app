@@ -4,12 +4,13 @@ import './App.css';
 import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
+import AddToFavourites from './components/AddToFavourites';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
-    const getMoviesRequest = async () => {
+    const getMoviesRequest = async (searchValue) => {
       const response = await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=2821e511`)
       const data = await response.json();
       console.log(data);
@@ -19,7 +20,7 @@ const App = () => {
     }
   
     useEffect(() => {
-      getMoviesRequest();
+      getMoviesRequest(searchValue);
     }, [searchValue]);
 
   return (
@@ -28,7 +29,8 @@ const App = () => {
         <MovieListHeading heading='Movies'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
-      <MovieList movies={movies}/>
+      <MovieList movies={movies} addToFavourites={AddToFavourites}/>
+      
     </div>
   );
 }

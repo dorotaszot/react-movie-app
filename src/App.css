@@ -17,3 +17,26 @@ body {
 /* .movie-img {
   height: 100%;
 } */
+
+.img-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+}
+
+.img-container:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
+
+.img-container:hover .overlay {
+  opacity: 1;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
