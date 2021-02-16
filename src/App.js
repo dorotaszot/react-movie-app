@@ -5,6 +5,8 @@ import MovieList from './components/MovieList';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddToFavourites from './components/AddToFavourites';
+import RemoveFavouriteMovie from './components/RemoveFavouriteMovie';
+
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -24,9 +26,14 @@ const App = () => {
       getMoviesRequest(searchValue);
     }, [searchValue]);
 
-    const FavouriteClick = (movie) => {
+    const addFavouriteMovie = (movie) => {
       const newFavouritesArr = [...favourites, movie];
       setFavourites(newFavouritesArr);
+    };
+
+    const deleteFavouriteMovie = (movie) => {
+      const filteredFavouritesArr = favourites.filter((favourite) => favourite.imdbID !== movie.imdbID);
+      setFavourites(filteredFavouritesArr);
     }
 
   return (
@@ -35,11 +42,12 @@ const App = () => {
         <MovieListHeading heading='Movies'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
-        <MovieList movies={movies} addToFavourites={AddToFavourites} handleFavouriteClick={FavouriteClick} />
-      
+      <div>
+        <MovieList movies={movies} favouriteComponent={AddToFavourites} handleFavouriteClick={addFavouriteMovie} />
+      </div>
       <div className="mt-3 mb-3">
         <MovieListHeading heading='Favourites' className="container"/>
-        <MovieList movies={favourites} addToFavourites={AddToFavourites} className="d-flex align-items-center justify-content-between container-fluid"/>
+        <MovieList movies={favourites} favouriteComponent={RemoveFavouriteMovie} handleFavouriteClick={deleteFavouriteMovie} className="d-flex align-items-center justify-content-between container-fluid"/>
       </div>
     </div>
   );
