@@ -10,13 +10,16 @@ body {
 }
 
 .movielist-container {
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
 }
 
 /* .movie-img {
   height: 100%;
 } */
+.img-film {
+  height: 100%;
+}
 
 .img-container {
   position: relative;
