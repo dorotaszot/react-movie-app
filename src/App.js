@@ -26,14 +26,28 @@ const App = () => {
       getMoviesRequest(searchValue);
     }, [searchValue]);
 
+    useEffect(() => {
+      const movieFavourites = JSON.parse(localStorage.getItem('react-movie-app-favourite-movies'));
+      if(movieFavourites) {
+        setFavourites(movieFavourites);
+      }
+    }, [])
+
+    const setToLocalStorage = (items) => {
+      localStorage.setItem('react-movie-app-favourite-movies', JSON.stringify(items));
+ 
+    };
+
     const addFavouriteMovie = (movie) => {
       const newFavouritesArr = [...favourites, movie];
       setFavourites(newFavouritesArr);
+      setToLocalStorage(newFavouritesArr);
     };
 
     const deleteFavouriteMovie = (movie) => {
       const filteredFavouritesArr = favourites.filter((favourite) => favourite.imdbID !== movie.imdbID);
       setFavourites(filteredFavouritesArr);
+      setToLocalStorage(filteredFavouritesArr);
     }
 
   return (
