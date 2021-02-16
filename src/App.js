@@ -35,7 +35,7 @@ const App = () => {
         <MovieListHeading heading='Movies'/>
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
-        <MovieList movies={movies} addToFavourites={AddToFavourites} handleFavouriteClick={FavouriteClick}/>
+        <MovieList movies={movies} addToFavourites={AddToFavourites} handleFavouriteClick={FavouriteClick} />
       
       <div className="mt-3 mb-3">
         <MovieListHeading heading='Favourites' className="container"/>

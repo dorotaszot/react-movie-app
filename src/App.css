@@ -17,13 +17,16 @@ body {
 /* .movie-img {
   height: 100%;
 } */
-.img-film {
-  height: 100%;
-}
 
 .img-container {
   position: relative;
 }
+
+/* .film-img {
+  max-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+} */
 
 .overlay {
   position: absolute;
